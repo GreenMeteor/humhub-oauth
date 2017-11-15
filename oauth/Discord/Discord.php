@@ -61,25 +61,9 @@ class Discord extends OAuth2
     /**
      * {@inheritdoc}
      */
-    public function getBaseAuthorizationUrl()
-    {
-        return self::BASE_API_URL.'/oauth2/authorize';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBaseAccessTokenUrl(array $params)
-    {
-        return self::BASE_API_URL.'/oauth2/token';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return self::BASE_API_URL.'/users/@me';
+        return $this->api('/users/@me', 'GET');
     }
 
     /**
@@ -114,7 +98,7 @@ class Discord extends OAuth2
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if (isset($data['error'])) {
-            throw new DiscordRequestException('Error in response from Discord: '.$data['error']);
+            throw new ErrorException('Error in response from Discord: '.$data['error']);
         }
     }
 
@@ -151,7 +135,7 @@ class Discord extends OAuth2
      */
     public function getGuildsEndpoint()
     {
-        return self::BASE_API_URL.'/users/@me/guilds';
+        return $this->api('/users/@me/guilds','GET');
     }
 
     /**
@@ -161,7 +145,7 @@ class Discord extends OAuth2
      */
     public function getConnectionsEndpoint()
     {
-        return self::BASE_API_URL.'/users/@me/connections';
+        return $this->api('/users/@me/connections', 'GET');
     }
 
     /**
@@ -173,7 +157,7 @@ class Discord extends OAuth2
      */
     public function getInviteEndpoint($invite)
     {
-        return self::BASE_API_URL.'/invites/'.$invite;
+        return $this->api('/invites/'.$invite);
     }
 
     /**
