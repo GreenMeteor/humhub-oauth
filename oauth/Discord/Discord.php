@@ -57,7 +57,24 @@ class Discord extends OAuth2
         'guilds.join', // Allows you to join the guild for the user
         'bot', // Defines a bot
     ];
-
+    public $defaultscopes = [
+      'identify',
+      'email'
+  ];
+    /**
+     * {@inheritdoc}
+     */
+    public function getBaseAuthorizationUrl()
+    {
+        return $this->api('/oauth2/authorize', 'GET');
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBaseAccessTokenUrl(array $params)
+    {
+        return $this->api('/oauth2/token', 'GET');
+    }
     /**
      * {@inheritdoc}
      */
@@ -65,15 +82,13 @@ class Discord extends OAuth2
     {
         return $this->api('/users/@me', 'GET');
     }
-
     /**
      * {@inheritdoc}
      */
     protected function getDefaultScopes()
     {
-        return ['identify', 'email'];
+        return DefaultScopes::$defaultScopes;
     }
-
     /**
      * {@inheritdoc}
      */
@@ -81,7 +96,6 @@ class Discord extends OAuth2
     {
         return ' ';
     }
-
     /**
      * {@inheritdoc}
      */
@@ -91,7 +105,6 @@ class Discord extends OAuth2
             'Authorization' => 'Bearer '.$token->getToken(),
         ];
     }
-
     /**
      * {@inheritdoc}
      */
@@ -101,7 +114,6 @@ class Discord extends OAuth2
             throw new ErrorException('Error in response from Discord: '.$data['error']);
         }
     }
-
     /**
      * {@inheritdoc}
      */
@@ -109,7 +121,6 @@ class Discord extends OAuth2
     {
         return new User($this, $token, (array) $response);
     }
-
     /**
      * Runs a request.
      *
@@ -127,7 +138,6 @@ class Discord extends OAuth2
         );
         return $this->getResponse($request);
     }
-
     /**
      * Gets the guilds endpoint.
      *
@@ -135,9 +145,8 @@ class Discord extends OAuth2
      */
     public function getGuildsEndpoint()
     {
-        return $this->api('/users/@me/guilds','GET');
+        return $this->api('/users/@me/guilds', 'GET');
     }
-
     /**
      * Gets the connections endpoint.
      *
@@ -147,7 +156,6 @@ class Discord extends OAuth2
     {
         return $this->api('/users/@me/connections', 'GET');
     }
-
     /**
      * Gets the accept invite endpoint.
      *
@@ -157,9 +165,8 @@ class Discord extends OAuth2
      */
     public function getInviteEndpoint($invite)
     {
-        return $this->api('/invites/'.$invite);
+        return $this->api('/invites/'.$invite, 'GET');
     }
-
     /**
      * Builds a part.
      *
@@ -173,10 +180,6 @@ class Discord extends OAuth2
     {
         return new $part($this, $token, (array) $attributes);
     }
-
-    /**
-     * @inheritdoc
-     */
     protected function defaultName() {
         return 'discord';
     }
