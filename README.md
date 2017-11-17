@@ -21,6 +21,15 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
            ],
 ```
 
+#### [WordPress](/oauth/WordPress)
+```php
+'wordpress' => [
+                    'class' => 'humhub\modules\user\authclient\WordPress',
+                    'clientId' => '56072',
+                    'clientSecret' => 'mYu1foz7WWGy6P8fymh1EP19aD85lWTqthKmGUvORzMxlHfP7UyXJSkbPisX2PyY',
+           ],
+```
+
 _More to come!_
 
 > **Notice: These aren't 100% working, and need work done before they can be used!**
