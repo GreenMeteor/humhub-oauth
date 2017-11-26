@@ -30,6 +30,14 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
            ],
 ```
 
+#### [Odnoklassniki](/oauth/Odnoklassniki)
+```php
+'odnoklassniki' => [
+                    'class' => 'humhub\modules\user\authclient\Odnoklassniki',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
+           ],
+```
 _More to come!_
 
 > **Notice: These aren't 100% working, and need work done before they can be used!**
