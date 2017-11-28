@@ -51,8 +51,8 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 
 #### [QQ](/oauth/QQ) (Not Tested!)
 ```php
-'qqauth' => [
-                    'class' => 'humhub\modules\user\authclient\QqAuth',
+'qq' => [
+                    'class' => 'humhub\modules\user\authclient\QQ',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
                 ],
