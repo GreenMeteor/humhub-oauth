@@ -4,6 +4,7 @@ The following oauths are working or have been submitted to be implemented into H
 ### Submitted
 - LinkedIn
 - Twitter
+- Instagram
 
 ### Needs Tested
 - [Odnoklassniki](/Odnoklassniki)
