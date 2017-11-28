@@ -62,8 +62,8 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 ```php
 'qqauth' => [
                     'class' => 'humhub\modules\user\authclient\Tumblr',
-                    'clientId' => 'YOUR CLIENT ID HERE',
-                    'clientSecret' => 'YOUR SECRET HERE',
+                    'consumerKey' => 'YOUR CLIENT ID HERE',
+                    'consumerSecret' => 'YOUR SECRET HERE',
                 ],
 ```
 
