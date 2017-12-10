@@ -44,7 +44,7 @@ class Discord extends OAuth2
      */
     public $apiBaseUrl = 'https://discordapp.com/api';
 
-    /**
+     /**
      * An array of available OAuth scopes.
      *
      * @var array Available scopes.
@@ -56,11 +56,14 @@ class Discord extends OAuth2
         'guilds', // Allows you to retrieve the guilds the user is in
         'guilds.join', // Allows you to join the guild for the user
         'bot', // Defines a bot
+        'gdm.join', // Allows you to join group DM
+        'messages.read', // for local rpc server api access, this allows you to read messages from all client channels (otherwise restricted to channels/guilds your app creates)
+        'rpc', // for local rpc server access, this allows you to control a user's local Discord client
+        'rpc.api', // for local rpc server api access, this allows you to access the API as the local user
+        'rpc.notifications.read', // for local rpc server api access, this allows you to receive notifications pushed out to the user
+        'webhook.incoming', // for local rpc server api access, this allows you to receive notifications pushed out to the user
     ];
-    public $defaultscopes = [
-      'identify',
-      'email'
-  ];
+
     /**
      * {@inheritdoc}
      */
@@ -68,6 +71,7 @@ class Discord extends OAuth2
     {
         return $this->api('/oauth2/authorize', 'GET');
     }
+
     /**
      * {@inheritdoc}
      */
@@ -75,6 +79,7 @@ class Discord extends OAuth2
     {
         return $this->api('/oauth2/token', 'GET');
     }
+
     /**
      * {@inheritdoc}
      */
@@ -82,6 +87,7 @@ class Discord extends OAuth2
     {
         return $this->api('/users/@me', 'GET');
     }
+
     /**
      * {@inheritdoc}
      */
@@ -89,13 +95,7 @@ class Discord extends OAuth2
     {
         return DefaultScopes::$defaultScopes;
     }
-    /**
-     * {@inheritdoc}
-     */
-    public function getScopeSeparator()
-    {
-        return ' ';
-    }
+
     /**
      * {@inheritdoc}
      */
@@ -105,6 +105,7 @@ class Discord extends OAuth2
             'Authorization' => 'Bearer '.$token->getToken(),
         ];
     }
+
     /**
      * {@inheritdoc}
      */
@@ -114,6 +115,7 @@ class Discord extends OAuth2
             throw new ErrorException('Error in response from Discord: '.$data['error']);
         }
     }
+
     /**
      * {@inheritdoc}
      */
@@ -121,6 +123,7 @@ class Discord extends OAuth2
     {
         return new User($this, $token, (array) $response);
     }
+
     /**
      * Runs a request.
      *
@@ -138,35 +141,7 @@ class Discord extends OAuth2
         );
         return $this->getResponse($request);
     }
-    /**
-     * Gets the guilds endpoint.
-     *
-     * @return string Endpoint.
-     */
-    public function getGuildsEndpoint()
-    {
-        return $this->api('/users/@me/guilds', 'GET');
-    }
-    /**
-     * Gets the connections endpoint.
-     *
-     * @return string Endpoint.
-     */
-    public function getConnectionsEndpoint()
-    {
-        return $this->api('/users/@me/connections', 'GET');
-    }
-    /**
-     * Gets the accept invite endpoint.
-     *
-     * @param string $invite The invite.
-     *
-     * @return string Endpoint.
-     */
-    public function getInviteEndpoint($invite)
-    {
-        return $this->api('/invites/'.$invite, 'GET');
-    }
+
     /**
      * Builds a part.
      *
