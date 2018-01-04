@@ -2,7 +2,7 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
@@ -72,7 +72,7 @@ class Slack extends OAuth2
      * @throws \yii\base\InvalidConfigException
      */
     protected function initUserAttributes() {
-        $params = $$this->getAccessToken()->getParams();
+        $params = $this->getAccessToken()->getParams();
         if (!$params['ok']) {
             throw new \yii\base\InvalidConfigException("Invalid Slack Configuration");
         }
