@@ -32,7 +32,7 @@ class Slack extends OAuth2
     /**
      * @inheritdoc
      */
-    public $authUrl = 'https://slack.com/oauth/authorize';
+    private $authUrl = 'https://slack.com/oauth/authorize';
 
     /**
      * @inheritdoc
@@ -43,11 +43,6 @@ class Slack extends OAuth2
      * @inheritdoc
      */
     public $apiBaseUrl = 'https://api.slack.com';
-
-    /**
-     * @inheritdoc
-     */
-    private $oauth_url = 'https://slack.com/api/oauth.access';
 
     public function init() {
         parent::init();
