@@ -2,7 +2,7 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
@@ -47,10 +47,12 @@ class Slack extends OAuth2
     /**
      * @inheritdoc
      */
+    private $oauth_url = 'https://slack.com/api/oauth.access';
+
     public function init() {
         parent::init();
         if ($this->scope === null) {
-            $this->scope = 'identity.basic,identity.email';
+            $this->scope = 'identity.basic';
         }
         // https://api.slack.com/docs/sign-in-with-slack
         $scopes = explode(',', $this->scope);
