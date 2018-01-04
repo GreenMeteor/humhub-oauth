@@ -32,7 +32,7 @@ class Slack extends OAuth2
     /**
      * @inheritdoc
      */
-    private $authUrl = 'https://slack.com/oauth/authorize';
+    public $authUrl = 'https://slack.com/oauth/authorize';
 
     /**
      * @inheritdoc
