@@ -12,6 +12,7 @@ use Yii;
 use yii\helpers\Url;
 use yii\authclient\OAuth2;
 use yii\base\ErrorException;
+use yii\base\InvalidConfigException;
 
 class Slack extends OAuth2
 {
@@ -61,7 +62,7 @@ class Slack extends OAuth2
      * @param array $params
      * @return type
      */
-    public function buildAuthUrl(array $params = array()) {
+    public function buildAuthUrl(array $params = []) {
         $params['state'] = 'login';
         return parent::buildAuthUrl($params);
     }
