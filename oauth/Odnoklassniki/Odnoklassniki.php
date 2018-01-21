@@ -2,7 +2,7 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
@@ -21,15 +21,15 @@ class Odnoklassniki extends OAuth2
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-odnoklassniki',
+            'cssIcon' => 'fab fa-odnoklassniki',
             'buttonBackgroundColor' => '#395697',
         ];
     }
-
-    /**
-     * @var string
-     */
-    public $applicationKey;
+    
+    /*
+    * @var string
+    */
+    public $applicationKey; //= 'CBACODHLEBABABABA';
     /**
      * @inheritdoc
      */
@@ -37,15 +37,30 @@ class Odnoklassniki extends OAuth2
     /**
      * @inheritdoc
      */
-    public $tokenUrl = 'https://api.odnoklassniki.ru/oauth/token.do';
+    public $tokenUrl = 'https://api.odnoklassniki.ru/oauth/token.do'; //?redirect_uri=http%3A%2F%2F5sp.ru%2Fuser%2Fsecurity%2Fauth%3Fauthclient%3Dodnoklassniki';
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'http://api.odnoklassniki.ru';
-    /**
-     * @inheritdoc
-     */
+    public $apiBaseUrl = 'http://api.odnoklassniki.ru/';
+    
     public $scope = 'VALUABLE_ACCESS';
+    /**
+     * @var array list of attribute names, which should be requested from API to initialize user attributes.
+     * @since 2.0.4
+     */
+    public $attributeNames = [
+        'uid',
+        'first_name',
+        'last_name',
+        'nickname',
+        'screen_name',
+        'sex',
+        'bdate',
+        'city',
+        'country',
+        'timezone',
+        'photo'
+    ];
     /**
      * @inheritdoc
      */
@@ -54,8 +69,20 @@ class Odnoklassniki extends OAuth2
         $params = [];
         $params['access_token'] = $this->accessToken->getToken();
         $params['application_key'] = $this->applicationKey;
+        //$params['redirect_uri'] = 'http://5sp.ru/user/security/auth?authclient=odnoklassniki';
         $params['sig'] = $this->sig($params, $params['access_token'], $this->clientSecret);
+        //var_dump($this->api('api/users/getCurrentUser', 'GET', $params)); die;
         return $this->api('api/users/getCurrentUser', 'GET', $params);
+    }
+    /**
+     * @inheritdoc
+     */
+    public function applyAccessTokenToRequest($request, $accessToken)
+    {
+        $data = $request->getData();
+        $data['uids'] = $accessToken->getParam('user_id');
+        $data['access_token'] = $accessToken->getToken();
+        $request->setData($data);
     }
     /**
      * @inheritdoc
@@ -101,7 +128,6 @@ class Odnoklassniki extends OAuth2
     {
         return 'Odnoklassniki';
     }
-    
     /**
      * @inheritdoc
      */
