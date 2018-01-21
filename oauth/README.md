@@ -4,16 +4,16 @@ The following oauths are working or have been submitted to be implemented into H
 ### Submitted
 - LinkedIn
 - Twitter
-- Instagram
+- [Instagram](/oauth/Instagram)
 
 ### Needs Tested
-- [Foursquare](/Foursquare)
-- [Pinterest](/Pinterest)
-- [WeChat](/WeChat)
-- [Odnoklassniki](/Odnoklassniki)
-- [QQ](/QQ)
-- [Tumblr](/Tumblr)
+- [Foursquare](/oauth/Foursquare)
+- [Pinterest](/oauth/Pinterest)
+- [WeChat](/oauth/WeChat)
+- [Odnoklassniki](/oauth/Odnoklassniki)
+- [QQ](/oauth/QQ)
+- [Tumblr](/oauth/Tumblr)
 
 ### Under Development
-- [Discord](/Discord)
-- [Slack](/Slack)
+- [Discord](/oauth/Discord)
+- [Slack](/oauth/Slack)
