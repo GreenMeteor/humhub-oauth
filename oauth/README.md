@@ -7,6 +7,9 @@ The following oauths are working or have been submitted to be implemented into H
 - Instagram
 
 ### Needs Tested
+- [Foursquare](/Foursquare)
+- [Pinterest](/Pinterest)
+- [WeChat](/WeChat)
 - [Odnoklassniki](/Odnoklassniki)
 - [QQ](/QQ)
 - [Tumblr](/Tumblr)
