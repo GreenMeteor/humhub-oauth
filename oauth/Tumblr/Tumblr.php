@@ -2,7 +2,7 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
@@ -20,7 +20,7 @@ class Tumblr extends OAuth1
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-tumblr',
+            'cssIcon' => 'fab fa-tumblr',
             'buttonBackgroundColor' => '#395697',
         ];
     }
