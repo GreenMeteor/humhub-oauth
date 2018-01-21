@@ -12,7 +12,7 @@ use yii\authclient\OAuth2;
 use yii\web\HttpException;
 use Yii;
 
-class Wechat extends OAuth2
+class WeChat extends OAuth2
 {
 
     /**
@@ -172,6 +172,6 @@ class Wechat extends OAuth2
      */
     protected function defaultTitle()
     {
-        return 'Wechat';
+        return 'WeChat';
     }
 }
