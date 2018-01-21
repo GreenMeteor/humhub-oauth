@@ -44,7 +44,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
            ],
 ```
 
-#### [Instagram](/oauth/Instagram) (Tested and works!)
+#### [Instagram](/oauth/Instagram) (Tested and submitted!)
 ```php
 'instagram' => [
                     'class' => 'humhub\modules\user\authclient\Instagram',
@@ -62,12 +62,39 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                 ],
 ```
 
-#### [Tumblr](/oauth/Tumblr) (Not Tested and may not work!)
+#### [Tumblr](/oauth/Tumblr) (Tested and not working!)
 ```php
-'qqauth' => [
+'tumblr' => [
                     'class' => 'humhub\modules\user\authclient\Tumblr',
                     'consumerKey' => 'YOUR CLIENT ID HERE',
                     'consumerSecret' => 'YOUR SECRET HERE',
+                ],
+```
+
+#### [Foursquare](/oauth/Foursquare) (Not tested!)
+```php
+'foursquare' => [
+                    'class' => 'humhub\modules\user\authclient\Foursquare',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
+                ],
+```
+
+#### [Pinterest](/oauth/Pinterest) (Not tested!)
+```php
+'pinterest' => [
+                    'class' => 'humhub\modules\user\authclient\Pinterest',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
+                ],
+```
+
+#### [WeChat](/oauth/WeChat) (Not tested!)
+```php
+'wechat' => [
+                    'class' => 'humhub\modules\user\authclient\WeChat',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
                 ],
 ```
 
