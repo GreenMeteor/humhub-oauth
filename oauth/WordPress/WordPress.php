@@ -2,15 +2,13 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
 namespace humhub\modules\user\authclient;
 
 use yii\authclient\OAuth2;
-use yii\web\HttpException;
-use Yii;
 
 class WordPress extends Oauth2
 {
@@ -23,7 +21,7 @@ class WordPress extends Oauth2
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-wordpress',
+            'cssIcon' => 'fab fa-wordpress',
             'buttonBackgroundColor' => '#395697',
         ];
     }
@@ -36,7 +34,7 @@ class WordPress extends Oauth2
 	/**
 	 * @inheritdoc
 	 */
-	public $requestTokenUrl = 'https://public-api.wordpress.com/oauth2/token';
+	public $tokenUrl = 'https://public-api.wordpress.com/oauth2/token';
 	
 	/**
 	 * @inheritdoc
@@ -46,36 +44,31 @@ class WordPress extends Oauth2
 	/**
 	 * @inheritdoc
 	 */
-	public $requestTokenMethod = 'POST';
-
-	/**
-	 * @inheritdoc
-	 */
-	public $accessTokenMethod = 'POST';
-
-	/**
-	 * @inheritdoc
-	 */
-	public $authorizationHeaderMethods = [ 'POST', 'PATCH', 'PUT', 'DELETE' ];
-
-	/**
-	 * @inheritdoc
-	 */
 	protected function initUserAttributes() {
-		return $this->api( 'account/verify_credentials.json', 'GET', $this->attributeParams );
+		return $this->api('account/verify_credentials.json', 'GET');
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	protected function defaultName() {
-		return 'wordpress';
+	public function applyAccessTokenToRequest($request, $accessToken)
+	{
+		$request->getHeaders()->set('Authorization', 'Bearer '. $accessToken->getToken());
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	protected function defaultTitle() {
+	protected function defaultName()
+	{
+	return 'wordpress';
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	protected function defaultTitle()
+	{
 		return 'WordPress';
 	}
 }
