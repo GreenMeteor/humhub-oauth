@@ -13,6 +13,7 @@ The following oauths are working or have been submitted to be implemented into H
 - [Odnoklassniki](/oauth/Odnoklassniki)
 - [QQ](/oauth/QQ)
 - [Tumblr](/oauth/Tumblr)
+- [Soundcloud](/oauth/Soundcloud)
 
 ### Under Development
 - [Discord](/oauth/Discord)
