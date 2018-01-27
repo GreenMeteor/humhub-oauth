@@ -98,6 +98,15 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                 ],
 ```
 
+#### [Soundcloud](/oauth/Soundcloud) (Not tested!)
+```php
+'soundcloud' => [
+                    'class' => 'humhub\modules\user\authclient\Soundcloud',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
+           ],
+```
+
 _More to come!_
 
 > **Notice: These aren't all 100% working, and need work done before they can be used to the fullest!**
