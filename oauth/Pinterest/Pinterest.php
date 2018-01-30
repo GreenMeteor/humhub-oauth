@@ -18,6 +18,8 @@ class Pinterest extends OAuth2
     protected function defaultViewOptions()
     {
         return [
+            'popupWidth' => 860,
+            'popupHeight' => 480,
             'cssIcon' => 'fab fa-pinterest',
             'buttonBackgroundColor' => '#4078C0',
         ];
@@ -33,7 +35,7 @@ class Pinterest extends OAuth2
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'https://api.pinterest.com/v1';
+    public $apiBaseUrl = 'https://api.pinterest.com/v1/';
     /**
      * @inheritdoc
      */
@@ -49,7 +51,7 @@ class Pinterest extends OAuth2
      */
     protected function initUserAttributes()
     {
-        return $this->api('me', 'GET');
+        return $this->api('v1/me', 'GET');
     }
     /**
      * @inheritdoc
