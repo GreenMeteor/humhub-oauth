@@ -26,7 +26,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
            ],
 ```
 
-#### [WordPress](/oauth/WordPress) (Known URL Malformed issue)
+#### [WordPress](/oauth/WordPress) (Tested!)
 ```php
 'wordpress' => [
                     'class' => 'humhub\modules\user\authclient\WordPress',
@@ -80,7 +80,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                 ],
 ```
 
-#### [Pinterest](/oauth/Pinterest) (Not tested!)
+#### [Pinterest](/oauth/Pinterest) (Tested!)
 ```php
 'pinterest' => [
                     'class' => 'humhub\modules\user\authclient\Pinterest',
