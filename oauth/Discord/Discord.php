@@ -2,7 +2,7 @@
 
 /**
  * @link https://www.humhub.org/
- * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
 
@@ -12,7 +12,6 @@ use Yii;
 use yii\helpers\Url;
 use yii\authclient\OAuth2;
 use yii\base\ErrorException;
-
 class Discord extends OAuth2
 {
 
@@ -24,7 +23,7 @@ class Discord extends OAuth2
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-discord',
+            'cssIcon' => 'fab fa-discord',
             'buttonBackgroundColor' => '#395697',
         ];
     }
@@ -42,119 +41,35 @@ class Discord extends OAuth2
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'https://discordapp.com/api';
-
-     /**
-     * An array of available OAuth scopes.
-     *
-     * @var array Available scopes.
-     */
-    protected $scopes = [
-        'identify', // Allows you to retrieve user data (except for email)
-        'email', // The same as identify but with email
-        'connections', // Allows you to retrieve connected YouTube and Twitch accounts
-        'guilds', // Allows you to retrieve the guilds the user is in
-        'guilds.join', // Allows you to join the guild for the user
-        'bot', // Defines a bot
-        'gdm.join', // Allows you to join group DM
-        'messages.read', // for local rpc server api access, this allows you to read messages from all client channels (otherwise restricted to channels/guilds your app creates)
-        'rpc', // for local rpc server access, this allows you to control a user's local Discord client
-        'rpc.api', // for local rpc server api access, this allows you to access the API as the local user
-        'rpc.notifications.read', // for local rpc server api access, this allows you to receive notifications pushed out to the user
-        'webhook.incoming', // for local rpc server api access, this allows you to receive notifications pushed out to the user
-    ];
+    public $apiBaseUrl = 'https://discordapp.com/api/v6';
 
     /**
      * {@inheritdoc}
      */
-    public function getBaseAuthorizationUrl()
+    protected function initUserAttributes()
     {
-        return $this->api('/oauth2/authorize', 'GET');
+        return $this->api('users/@me', 'GET');
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getBaseAccessTokenUrl(array $params)
-    {
-        return $this->api('/oauth2/token', 'GET');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getResourceOwnerDetailsUrl(AccessToken $token)
-    {
-        return $this->api('/users/@me', 'GET');
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getDefaultScopes()
     {
-        return DefaultScopes::$defaultScopes;
+        return ['identify', 'email'];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getAuthorizationHeaders($token = null)
+    public function applyAccessTokenToRequest($request, $accessToken)
     {
-        return [
-            'Authorization' => 'Bearer '.$token->getToken(),
-        ];
+        $request->getHeaders()->set('Authorization', 'Bearer '. $accessToken->getToken());
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    protected function checkResponse(ResponseInterface $response, $data)
-    {
-        if (isset($data['error'])) {
-            throw new ErrorException('Error in response from Discord: '.$data['error']);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function createResourceOwner(array $response, AccessToken $token)
-    {
-        return new User($this, $token, (array) $response);
-    }
-
-    /**
-     * Runs a request.
-     *
-     * @param string      $method  The HTTP method.
-     * @param string      $url     The URL.
-     * @param AccessToken $token   The auth token.
-     * @param array       $options An array of request options.
-     *
-     * @return array Response.
-     */
-    public function request($method, $url, $token, array $options = [])
-    {
-        $request = $this->getAuthenticatedRequest(
-            $method, $url, $token, $options
-        );
-        return $this->getResponse($request);
-    }
-
-    /**
-     * Builds a part.
-     *
-     * @param string      $part       The part to build.
-     * @param AccessToken $token      The access token.
-     * @param array       $attributes Array of attributes.
-     *
-     * @return Part A part.
-     */
-    public function buildPart($part, AccessToken $token, $attributes = [])
-    {
-        return new $part($this, $token, (array) $attributes);
-    }
     protected function defaultName() {
         return 'discord';
     }
