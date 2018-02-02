@@ -13,6 +13,7 @@ The following oauths are working or have been submitted to be implemented into H
 - [Odnoklassniki](/oauth/Odnoklassniki)
 - [QQ](/oauth/QQ)
 - [Tumblr](/oauth/Tumblr)
+- [Patreon](/oauth/Patreon) Note: Do not use unless you know how Patreon Oauths work.
 
 ### Under Development
 - [Discord](/oauth/Discord)
