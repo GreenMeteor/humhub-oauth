@@ -46,7 +46,7 @@ class Patreon extends OAuth2
      */
     protected function initUserAttributes()
     {
-        $response = $this->api('current_user/campaigns?include=creator', 'GET');
+        $response = $this->api('current_user', 'GET');
         return $response['data'];
     }
 
