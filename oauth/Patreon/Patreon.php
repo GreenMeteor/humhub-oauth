@@ -34,7 +34,7 @@ class Patreon extends OAuth2
     /**
      * @inheritdoc
      */
-    public $tokenUrl = 'https://api.patreon.com/oauth2/token';
+    public $tokenUrl = 'https://patreon.com/oauth2/token';
 
     /**
      * @inheritdoc
