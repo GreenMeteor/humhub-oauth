@@ -26,13 +26,13 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
            ],
 ```
 
-#### [WordPress](/oauth/WordPress) (Known URL Malformed issue)
+#### [WordPress](/oauth/WordPress) (Tested!)
 ```php
 'wordpress' => [
                     'class' => 'humhub\modules\user\authclient\WordPress',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-           ],
+               ],
 ```
 
 #### [Odnoklassniki](/oauth/Odnoklassniki) (Not Tested!)
@@ -41,7 +41,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                     'class' => 'humhub\modules\user\authclient\Odnoklassniki',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-           ],
+                   ],
 ```
 
 #### [Instagram](/oauth/Instagram) (Tested and submitted!)
@@ -50,7 +50,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                     'class' => 'humhub\modules\user\authclient\Instagram',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-                ],
+               ],
 ```
 
 #### [QQ](/oauth/QQ) (Not Tested!)
@@ -59,7 +59,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                     'class' => 'humhub\modules\user\authclient\QQ',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-                ],
+        ],
 ```
 
 #### [Tumblr](/oauth/Tumblr) (Tested and not working!)
@@ -68,7 +68,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                     'class' => 'humhub\modules\user\authclient\Tumblr',
                     'consumerKey' => 'YOUR CLIENT ID HERE',
                     'consumerSecret' => 'YOUR SECRET HERE',
-                ],
+            ],
 ```
 
 #### [Foursquare](/oauth/Foursquare) (Not tested!)
@@ -80,13 +80,13 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                 ],
 ```
 
-#### [Pinterest](/oauth/Pinterest) (Not tested!)
+#### [Pinterest](/oauth/Pinterest) (Tested!)
 ```php
 'pinterest' => [
                     'class' => 'humhub\modules\user\authclient\Pinterest',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-                ],
+               ],
 ```
 
 #### [WeChat](/oauth/WeChat) (Not tested!)
@@ -95,7 +95,16 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                     'class' => 'humhub\modules\user\authclient\WeChat',
                     'clientId' => 'YOUR CLIENT ID HERE',
                     'clientSecret' => 'YOUR SECRET HERE',
-                ],
+            ],
+```
+
+#### [Patreon](/oauth/Patreon) (Note: Do not use unless you know how Patreon Oauths work!)
+```php
+'patreon' => [
+                    'class' => 'humhub\modules\user\authclient\Patreon',
+                    'clientId' => 'YOUR CLIENT ID HERE',
+                    'clientSecret' => 'YOUR SECRET HERE',
+             ],
 ```
 
 #### [Soundcloud](/oauth/Soundcloud) (Not tested!)
