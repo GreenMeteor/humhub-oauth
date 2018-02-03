@@ -12,6 +12,7 @@ use yii\authclient\OAuth2;
 
 class Pinterest extends OAuth2
 {
+
     /**
      * @inheritdoc
      */
@@ -24,18 +25,44 @@ class Pinterest extends OAuth2
             'buttonBackgroundColor' => '#4078C0',
         ];
     }
+
     /**
      * @inheritdoc
      */
-    public $authUrl = 'https://api.pinterest.com/oauth/';
+    public $authUrl = 'https://api.pinterest.com/oauth';
+
     /**
      * @inheritdoc
      */
     public $tokenUrl = 'https://api.pinterest.com/v1/oauth/token';
+
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'https://api.pinterest.com/v1/';
+    public $apiBaseUrl = 'https://api.pinterest.com/v1';
+
+    /**
+     * @var array list of attribute names, which should be requested from API to initialize user attributes.
+     */
+    public $attributeNames = [
+        'id',
+        'username',
+        'first_name',
+        'last_name',
+    ];
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function defaultNormalizeUserAttributeMap()
+    {
+        return [
+            'username' => 'username',
+            'first_name' => 'first-name',
+            'last_name' => 'last-name',
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -46,13 +73,25 @@ class Pinterest extends OAuth2
             $this->scope = 'read_public';
         }
     }
+
     /**
      * @inheritdoc
      */
     protected function initUserAttributes()
     {
-        return $this->api('v1/me', 'GET');
+        return $this->api('/v1/me/~:(' . implode(',', $this->attributeNames) . ')', 'GET');
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function applyAccessTokenToRequest($request, $accessToken)
+    {
+        $data = $request->getData();
+        $data['oauth2_access_token'] = $accessToken->getToken();
+        $request->setData($data);
+    }
+
     /**
      * @inheritdoc
      */
@@ -60,6 +99,7 @@ class Pinterest extends OAuth2
     {
         return 'pinterest';
     }
+
     /**
      * @inheritdoc
      */
