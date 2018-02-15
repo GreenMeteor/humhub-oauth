@@ -12,6 +12,7 @@ use Yii;
 use yii\helpers\Url;
 use yii\authclient\OAuth2;
 use yii\base\ErrorException;
+
 class Discord extends OAuth2
 {
 
