@@ -12,7 +12,6 @@ use yii\authclient\OAuth2;
 
 class Pinterest extends OAuth2
 {
-
     /**
      * @inheritdoc
      */
@@ -29,7 +28,7 @@ class Pinterest extends OAuth2
     /**
      * @inheritdoc
      */
-    public $authUrl = 'https://api.pinterest.com/oauth';
+    public $authUrl = 'https://api.pinterest.com/oauth/';
 
     /**
      * @inheritdoc
@@ -52,7 +51,7 @@ class Pinterest extends OAuth2
     ];
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function defaultNormalizeUserAttributeMap()
     {
@@ -79,17 +78,7 @@ class Pinterest extends OAuth2
      */
     protected function initUserAttributes()
     {
-        return $this->api('/v1/me/~:(' . implode(',', $this->attributeNames) . ')', 'GET');
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function applyAccessTokenToRequest($request, $accessToken)
-    {
-        $data = $request->getData();
-        $data['oauth2_access_token'] = $accessToken->getToken();
-        $request->setData($data);
+        return $this->api('me', 'GET');
     }
 
     /**
