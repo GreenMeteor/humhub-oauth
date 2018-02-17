@@ -18,22 +18,50 @@ class Pinterest extends OAuth2
     protected function defaultViewOptions()
     {
         return [
+            'popupWidth' => 860,
+            'popupHeight' => 480,
             'cssIcon' => 'fab fa-pinterest',
             'buttonBackgroundColor' => '#4078C0',
         ];
     }
+
     /**
      * @inheritdoc
      */
     public $authUrl = 'https://api.pinterest.com/oauth/';
+
     /**
      * @inheritdoc
      */
     public $tokenUrl = 'https://api.pinterest.com/v1/oauth/token';
+
     /**
      * @inheritdoc
      */
     public $apiBaseUrl = 'https://api.pinterest.com/v1';
+
+    /**
+     * @var array list of attribute names, which should be requested from API to initialize user attributes.
+     */
+    public $attributeNames = [
+        'id',
+        'username',
+        'first_name',
+        'last_name',
+    ];
+
+    /**
+     * @inheritdoc
+     */
+    protected function defaultNormalizeUserAttributeMap()
+    {
+        return [
+            'username' => 'username',
+            'first_name' => 'first-name',
+            'last_name' => 'last-name',
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -44,6 +72,7 @@ class Pinterest extends OAuth2
             $this->scope = 'read_public';
         }
     }
+
     /**
      * @inheritdoc
      */
@@ -51,6 +80,7 @@ class Pinterest extends OAuth2
     {
         return $this->api('me', 'GET');
     }
+
     /**
      * @inheritdoc
      */
@@ -58,6 +88,7 @@ class Pinterest extends OAuth2
     {
         return 'pinterest';
     }
+
     /**
      * @inheritdoc
      */
