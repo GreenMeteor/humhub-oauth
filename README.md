@@ -44,7 +44,7 @@ To use this you'll have to first acquire your `clientId` & `clientSecret` from `
                    ],
 ```
 
-#### [Instagram](/oauth/Instagram) (Tested and submitted!)
+#### [Instagram](/oauth/Instagram) (Deprecated since 1.0.1!)
 ```php
 'instagram' => [
                     'class' => 'humhub\modules\user\authclient\Instagram',
