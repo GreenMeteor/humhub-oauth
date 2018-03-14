@@ -45,23 +45,31 @@ class Discord extends OAuth2
     public $apiBaseUrl = 'https://discordapp.com/api/v6';
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    protected function initUserAttributes()
-    {
-        return $this->api('users/@me', 'GET');
-    }
+    public $scope = 'email';
 
     /**
      * @inheritdoc
      */
-    protected function getDefaultScopes()
+    public $attributeNames = [
+        'id',
+        'name',
+        'email',
+    ];
+
+    /**
+     * @inheritdoc
+     */
+    protected function initUserAttributes()
     {
-        return ['identify', 'email'];
+        return $this->api('users/@me/connections ', 'GET', [
+        'email' => implode(',', $this->attributeNames),
+        ]);
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function applyAccessTokenToRequest($request, $accessToken)
     {
