@@ -4,7 +4,7 @@ A number of Social OAuth for the Social Platform HumHub
 ### OAuth Install & Setup
 Once you've downloaded & uploaded the contents from both the Discord & Slack directories to `/protected/humhub/modules/user/authclient` add the following codes to your `common.php` file located in `/protected/config`.
 
-#### [Discord](/oauth/Discord) (Not working)
+#### [Discord](/oauth/Discord) (Working)
 To use this you'll have to first acquire your `clientId` & `clientSecret` from `https://discordapp.com/developers/applications/me` then make sure that you also set your redirect URI to `http://YOUR-HUMHUB.com/user/auth/external?authclient=discord` or it won't work.
 
 ```php
