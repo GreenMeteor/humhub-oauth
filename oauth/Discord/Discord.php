@@ -54,7 +54,6 @@ class Discord extends OAuth2
      */
     public $attributeNames = [
         'id',
-        'name',
         'email',
     ];
 
@@ -63,9 +62,7 @@ class Discord extends OAuth2
      */
     protected function initUserAttributes()
     {
-        return $this->api('users/@me/connections ', 'GET', [
-        'email' => implode(',', $this->attributeNames),
-        ]);
+        return $this->api('users/@me', 'GET');
     }
 
     /**
