@@ -46,12 +46,4 @@ class Lianluo extends OAuth2
     {
         return '联络互动';
     }
-
-    protected function defaultViewOptions()
-    {
-        return [
-            'popupWidth' => 800,
-            'popupHeight' => 500
-        ];
-    }
 }
