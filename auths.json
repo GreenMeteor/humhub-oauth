@@ -1,0 +1,14 @@
+{
+    "id": "auths",
+    "name": "Social Logins for HumHub",
+	"author": "Green Meteor",
+	"website": "http://community.greenmeteor.pcriot.com/dashboard/",
+	"github": "https://github.com/GreenMeteor/humhub-oauth",
+    "description": "A list of Social Logins for the HumHub platform.",
+    "keywords": ["oauth1, oauth2"],
+    "version": "1.0.2",
+    "humhub": {
+        "minVersion": "1.3"
+    },
+	"license": "AGPL-3.0",
+}
