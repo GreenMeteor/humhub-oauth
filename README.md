@@ -1,3 +1,5 @@
+[![CLA assistant](https://cla-assistant.io/readme/badge/GreenMeteor/humhub-oauth)](https://cla-assistant.io/GreenMeteor/humhub-oauth)
+
 # [HumHub](https://humhub.org/en) OAuths
 A number of Social OAuth for the Social Platform HumHub
 
