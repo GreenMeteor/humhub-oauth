@@ -3,6 +3,8 @@
 # [HumHub](https://humhub.org/en) OAuths
 A number of Social OAuth for the Social Platform HumHub
 
+> Notice: These are not for account creation, these are for connecting Social media accounts to your HumHub installation and logging in with them after.
+
 ### OAuth Install & Setup
 Once you've downloaded & uploaded the contents from both the Discord & Slack directories to `/protected/humhub/modules/user/authclient` add the following codes to your `common.php` file located in `/protected/config`.
 
