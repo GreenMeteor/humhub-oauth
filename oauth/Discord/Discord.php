@@ -9,13 +9,14 @@
 namespace humhub\modules\user\authclient;
 
 use Yii;
-use yii\helpers\Url;
 use yii\authclient\OAuth2;
-use yii\base\ErrorException;
 
-class Discord extends OAuth2
+/**
+ * Discord Authclient
+ */
+class Discord extends Oauth2
+
 {
-
     /**
      * @inheritdoc
      */
@@ -47,14 +48,14 @@ class Discord extends OAuth2
     /**
      * @inheritdoc
      */
-    public $scope = 'email';
+    public $scope = 'identify';
 
     /**
      * @inheritdoc
      */
     public $attributeNames = [
         'id',
-        'email',
+        'email'
     ];
 
     /**
