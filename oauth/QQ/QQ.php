@@ -12,6 +12,7 @@ use yii\authclient\InvalidResponseException;
 use yii\authclient\OAuth2;
 use yii\httpclient\Request;
 use yii\httpclient\Response;
+use yii\helpers\ArrayHelper;
 
 class QqAuth extends OAuth2 implements IAuth
 {
@@ -44,9 +45,20 @@ class QqAuth extends OAuth2 implements IAuth
         ];
     }
 
+    /**
+     * @return array
+     */
     protected function initUserAttributes()
     {
-        return $this->api('oauth2.0/me', 'GET');
+        $user = $this->getUserInfo();
+        $response = $this->api('user/get_user_info', 'GET', [
+            'oauth_consumer_key' => $user['client_id'],
+            'openid' => $user['openid'],
+        ]);
+        return ArrayHelper::merge([
+            'client' => 'qq',
+            'openid' => $user['openid'],
+        ], $response);
     }
 
     /**
@@ -78,7 +90,7 @@ class QqAuth extends OAuth2 implements IAuth
 
     protected function defaultTitle()
     {
-        return 'QQ';
+        return 'QQ 登录';
     }
 
     /**
@@ -86,7 +98,6 @@ class QqAuth extends OAuth2 implements IAuth
      * @param \yii\httpclient\Request $request HTTP request to be sent.
      * @return array response data.
      * @throws InvalidResponseException on invalid remote response.
-     * @since 2.1
      */
     protected function sendRequest($request)
     {
