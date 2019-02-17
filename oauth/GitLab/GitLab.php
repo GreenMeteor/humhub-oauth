@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2019 HumHub GmbH & Co. KG
