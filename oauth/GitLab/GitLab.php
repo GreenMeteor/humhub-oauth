@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2019 HumHub GmbH & Co. KG
+ * @license https://www.humhub.org/en/licences
+ */
+
 namespace humhub\modules\user\authclient;
 
 use yii\authclient\OAuth2;
