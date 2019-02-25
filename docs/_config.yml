@@ -1,1 +1,9 @@
+uistring:
+    title: HumHub Oauths | Green Meteor
+    description: Giving important guides to using modules and themes for HumHub projects.
+    copyright: 2017 Green Meteor, Inc.
+    github_button_location_page_bottom: true
+
+favicon: ico/16x16.ico
+
 theme: jekyll-theme-minimal
