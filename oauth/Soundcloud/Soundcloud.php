@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ * @deprecated since 1.0.4
+ */
+
 namespace humhub\modules\user\authclient;
 
 use yii\authclient\OAuth2;
@@ -16,7 +23,7 @@ class Soundcloud extends OAuth2
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fab fa-soundcloud',
+            'cssIcon' => 'fa fa-soundcloud',
             'buttonBackgroundColor' => '#395697',
         ];
     }
