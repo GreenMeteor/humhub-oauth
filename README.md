@@ -38,6 +38,8 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 
 ### [GitLab](/oauth/GitLab/README.md) (Working!)
 
+### [Rocket Firm](/oauth/Rocket%20Firm/README.md) (Working!)
+
 _More to come!_
 
 > **Notice: These aren't all 100% working, and need work done before they can be used to the fullest!**
