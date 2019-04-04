@@ -6,7 +6,7 @@
 	"github": "https://github.com/GreenMeteor/humhub-oauth",
     "description": "A list of Social Logins for the HumHub platform.",
     "keywords": ["oauth1, oauth2"],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "humhub": {
         "minVersion": "1.3"
     },
