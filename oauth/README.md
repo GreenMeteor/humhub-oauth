@@ -4,18 +4,23 @@ The following oauths are working or have been submitted to be implemented into H
 ### Submitted
 - LinkedIn
 - Twitter
-- [Instagram](/oauth/Instagram)
+
+### Working
+- [Rocket Firm](/oauth/Rocket%20Firm)
+- [Discord](/oauth/Discord)
 
 ### Needs Tested
 - [Foursquare](/oauth/Foursquare)
 - [Pinterest](/oauth/Pinterest)
 - [WeChat](/oauth/WeChat)
-- [Odnoklassniki](/oauth/Odnoklassniki)
 - [QQ](/oauth/QQ)
 - [Tumblr](/oauth/Tumblr)
 - [Patreon](/oauth/Patreon) Note: Do not use unless you know how Patreon Oauths work.
-- [Soundcloud](/oauth/Soundcloud)
 
 ### Under Development
-- [Discord](/oauth/Discord)
 - [Slack](/oauth/Slack)
+
+### Deprecated
+- [Instagram](/oauth/Instagram)
+- [Odnoklassniki](/oauth/Odnoklassniki)
+- [Soundcloud](/oauth/Soundcloud)
