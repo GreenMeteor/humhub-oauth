@@ -15,7 +15,6 @@ use yii\authclient\OAuth2;
  * Discord Authclient
  */
 class Discord extends Oauth2
-
 {
     /**
      * @inheritdoc
@@ -48,7 +47,7 @@ class Discord extends Oauth2
     /**
      * @inheritdoc
      */
-    public $scope = 'identify';
+    public $scope = 'identify email';
 
     /**
      * @inheritdoc
