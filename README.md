@@ -9,13 +9,16 @@ A number of Social OAuth for the Social Platform HumHub
 ## OAuth Install & Setup
 Once you've downloaded & uploaded the contents from both the Discord & Slack directories to `/protected/humhub/modules/user/authclient` add the following codes to your `common.php` file located in `/protected/config`.
 
+
+## OAuth Index
+
 ### [Discord](/oauth/Discord/README.md) (Working)
 
 ### [Slack](/oauth/Slack/README.md) (Not Working)
 
 ### [WordPress](/oauth/WordPress/README.md) (On-Hold!)
 
-### [Odnoklassniki](/oauth/Odnoklassniki/README.md) (Unconfirmed!)
+### [Odnoklassniki](/oauth/Odnoklassniki/README.md) (Deprecated since 1.0.6!)
 
 ### [Instagram](/oauth/Instagram) (Deprecated since 1.0.1!)
 
@@ -25,11 +28,11 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 
 ### [Foursquare](/oauth/Foursquare/README.md) (Not tested!)
 
-### [Pinterest](/oauth/Pinterest/README.md) (Tested!)
+### [Pinterest](/oauth/Pinterest/README.md) (Deprecated since 1.0.6!)
 
 ### [WeChat](/oauth/WeChat/README.md) (Not tested!)
 
-### [Patreon](/oauth/Patreon/README.md) (Note: Do not use unless you know how Patreon Oauths work!)
+### [Patreon](/oauth/Patreon/README.md) (Deprecated since 1.0.6!)
 
 ### [Soundcloud](/oauth/Soundcloud) (Closed API!)
 
