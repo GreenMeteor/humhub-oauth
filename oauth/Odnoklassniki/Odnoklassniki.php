@@ -4,7 +4,7 @@
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
- * @deprecated since 1.0.5
+ * @deprecated since 1.0.6
  */
 
 namespace humhub\modules\user\authclient;
