@@ -4,16 +4,13 @@
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
- * @deprecated since 1.0.6
  */
 
 namespace humhub\modules\user\authclient;
 
 use yii\authclient\OAuth2;
-
 class Patreon extends OAuth2
 {
-
     /**
      * @inheritdoc
      */
@@ -35,19 +32,24 @@ class Patreon extends OAuth2
     /**
      * @inheritdoc
      */
-    public $tokenUrl = 'https://patreon.com/oauth2/token';
+    public $tokenUrl = 'https://www.patreon.com/api/oauth2/token';
 
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'https://patreon.com/api';
+    public $apiBaseUrl = 'https://www.patreon.com/api/';
+
+    /**
+     * @inheritdoc
+     */
+    public $scope = 'identity[email]';
 
     /**
      * @inheritdoc
      */
     protected function initUserAttributes()
     {
-        $response = $this->api('current_user', 'GET');
+        $response = $this->api('oauth2/api/current_user', 'GET');
         return $response['data'];
     }
 
