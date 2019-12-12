@@ -32,13 +32,13 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 
 ### [WeChat](/oauth/WeChat/README.md) (Not tested!)
 
-### [Patreon](/oauth/Patreon/README.md) (Deprecated since 1.0.6!)
+### [Patreon](/oauth/Patreon/README.md) (In testing!)
 
 ### [Soundcloud](/oauth/Soundcloud) (Closed API!)
 
-### [Twitch](/oauth/Twitch/README.md) (Tested!)
+### [Twitch](/oauth/Twitch/README.md) (Not working!)
 
-### [Lianluo](/oauth/Lianluo/README.md) (Note tested!)
+### [Lianluo](/oauth/Lianluo/README.md) (Not tested!)
 
 ### [GitLab](/oauth/GitLab/README.md) (Working!)
 
