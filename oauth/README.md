@@ -8,6 +8,7 @@ The following oauths are working or have been submitted to be implemented into H
 ### Working
 - [Rocket Firm](/oauth/Rocket%20Firm)
 - [Discord](/oauth/Discord)
+- [Patreon](/oauth/Patreon)
 
 ### Needs Tested
 - [Foursquare](/oauth/Foursquare)
@@ -15,10 +16,11 @@ The following oauths are working or have been submitted to be implemented into H
 - [WeChat](/oauth/WeChat)
 - [QQ](/oauth/QQ)
 - [Tumblr](/oauth/Tumblr)
-- [Patreon](/oauth/Patreon) Note: Do not use unless you know how Patreon Oauths work.
+- [Storenvy](/oauth/Storenvy)
 
 ### Under Development
 - [Slack](/oauth/Slack)
+- [HumHub](/oauth/HumHub)
 
 ### Deprecated
 - [Instagram](/oauth/Instagram)
