@@ -1,6 +1,9 @@
 # Changelogs
+### HumHub OAuths v1.0.7 4/17/2020
+- Enh: HumHub OAuth demo
+- Enh: Storenvy internal release
 
-### HumHub Oauths 1.0.0 Feb 17, 2018, 3:56 PM JST
+### HumHub OAuths v1.0.0 2/17/2018
 - Enh: Added Patreon oauth
 - Fix: Fixed Patreon oauth issue ([Issue #5](https://github.com/GreenMeteor/humhub-oauth/issues/5))
 - Enh: Added Pinterest oauth
