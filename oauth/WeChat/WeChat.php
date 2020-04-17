@@ -51,6 +51,11 @@ class WeChat extends OAuth2
     /**
      * @inheritdoc
      */
+    public $scope = 'snsapi_base';
+
+    /**
+     * @inheritdoc
+     */
     public $type = null;
     
     /**
