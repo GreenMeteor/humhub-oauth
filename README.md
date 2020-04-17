@@ -32,7 +32,7 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 
 ### [WeChat](/oauth/WeChat/README.md) (Not tested!)
 
-### [Patreon](/oauth/Patreon/README.md) (In testing!)
+### [Patreon](/oauth/Patreon/README.md) (Working!)
 
 ### [Soundcloud](/oauth/Soundcloud) (Closed API!)
 
@@ -43,6 +43,10 @@ Once you've downloaded & uploaded the contents from both the Discord & Slack dir
 ### [GitLab](/oauth/GitLab/README.md) (Working!)
 
 ### [Rocket Firm](/oauth/Rocket%20Firm/README.md) (Working!)
+
+### [HumHub](/oauth/HumHub/README.md) (Under Development!)
+
+### [Storenvy](/oauth/Storenvy/README.md) (Not tested!)
 
 _More to come!_
 
