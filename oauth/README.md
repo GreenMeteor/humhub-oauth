@@ -17,6 +17,7 @@ The following oauths are working or have been submitted to be implemented into H
 - [QQ](/oauth/QQ)
 - [Tumblr](/oauth/Tumblr)
 - [Storenvy](/oauth/Storenvy)
+- [Mastodon](/oauth/Mastodon)
 
 ### Under Development
 - [Slack](/oauth/Slack)
