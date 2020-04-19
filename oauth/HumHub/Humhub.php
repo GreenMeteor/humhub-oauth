@@ -42,14 +42,14 @@ class Humhub extends Oauth2
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'TBA';
+    public $apiBaseUrl = 'http://localhost/api/v1';
 
     /**
      * @inheritdoc
      */
     protected function initUserAttributes()
     {
-        return $this->api('TBA', 'GET');
+        return $this->api('user/{id}', 'GET');
     }
 
     /**
