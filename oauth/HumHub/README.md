@@ -1,5 +1,4 @@
 # Setup
----
 > **DO NOT USE AT THIS TIME!**
 
 ```php
@@ -22,3 +21,5 @@ return [
     // ...
 ];
 ```
+
+> Note: This OAuth requires the use of the [Rest Module](https://github.com/humhub/humhub-modules-rest) to be installed.
