@@ -2,7 +2,7 @@
 
 [![CLA assistant](https://cla-assistant.io/readme/badge/GreenMeteor/humhub-oauth)](https://cla-assistant.io/GreenMeteor/humhub-oauth)
 
-A number of Social OAuth for the Social Platform HumHub
+Social OAuths built for the Social Platform HumHub
 
 > Notice: These are not for account creation, these are for connecting Social media accounts to your HumHub installation and logging in with them after.
 
