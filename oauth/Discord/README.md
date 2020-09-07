@@ -13,6 +13,7 @@ return [
                     'class' => 'humhub\modules\user\authclient\Discord',
                     'clientId' => 'Your Discord App ID here',
                     'clientSecret' => 'Your Discord App Secret here',
+                    'returnUrl' => 'http://YOUR-HUMHUB.com/user/auth/external?authclient=discord',
                 ],
             ],
         ],
