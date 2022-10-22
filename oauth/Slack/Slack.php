@@ -1,17 +1,8 @@
 <?php
 
-/**
- * @link https://www.humhub.org/
- * @copyright Copyright (c) 2018 HumHub GmbH & Co. KG
- * @license https://www.humhub.org/en/licences
- */
-
 namespace humhub\modules\user\authclient;
 
-use Yii;
-use yii\helpers\Url;
 use yii\authclient\OAuth2;
-use yii\base\ErrorException;
 
 class Slack extends OAuth2
 {
@@ -24,7 +15,7 @@ class Slack extends OAuth2
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-slack',
+            'cssIcon' => 'fa-slack',
             'buttonBackgroundColor' => '#395697',
         ];
     }
@@ -42,7 +33,7 @@ class Slack extends OAuth2
     /**
      * @inheritdoc
      */
-    public $apiBaseUrl = 'https://api.slack.com';
+    public $apiBaseUrl = 'https://slack.com/api';
 
     /**
      * @inheritdoc
@@ -62,7 +53,7 @@ class Slack extends OAuth2
      */
     protected function initUserAttributes()
     {
-        return $this->api('users.identity', 'GET');
+        return $this->api('users.info?', 'GET');
     }
 
     /**
@@ -76,14 +67,17 @@ class Slack extends OAuth2
     /**
      * @inheritdoc
      */
-    protected function defaultName() {
+    protected function defaultName()
+    {
         return 'slack';
     }
 
     /**
      * @inheritdoc
      */
-    protected function defaultTitle() {
+    protected function defaultTitle()
+    {
         return 'Slack';
     }
+
 }
