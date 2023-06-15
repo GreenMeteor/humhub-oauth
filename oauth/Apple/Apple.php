@@ -81,11 +81,6 @@ class Apple extends OAuth2
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public $scope = 'name email';
-
     public function buildAuthUrl ( $params = [] ){
     	$params['response_mode'] = 'form_post';
     	return parent::buildAuthUrl($params);
