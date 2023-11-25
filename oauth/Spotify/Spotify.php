@@ -33,7 +33,7 @@ class Spotify extends OAuth2
     /**
      * @inheritdoc
      */
-    public $scope = 'user-read-email';
+    public $scope = 'user-read-email user-read-private';
 
     /**
      * @var array list of attribute names, which should be requested from API to initialize user attributes.
